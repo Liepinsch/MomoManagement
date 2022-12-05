@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    div#gamesTM(style='width:100%')
+        table#TM_game(style='width:100%')
+            tr
+                td(style='width:6%')
+                    img(src='/images/blockbrawler.png' style='width:4em')
+                th(style='width:11%')
+                    p Adventure
+                th(style='width:11%')
+                    p Plunder
+                th(style='width:11%')
+                    p Gold
+                th(style='width:11%')
+                    p Earnings
+                th(style='width:11%')
+                    p Expencies
+                th(style='width:11%')
+                    p Total
+                td(style='width:6%')
+                    i.fa-regular.fa-square-plus.fa-2xl(onclick='addTMSeason()')
+    script(type='text/javascript', src='javascripts/views/tockenmaster.js')
+    script.
+       var price = !{prices}
+       savePrices(price)
+
+       createTMTable()
+       
+       document.addEventListener('newTMSeasonAdded', (e) => {
+            createTMTable()
+       }, false)
+
+       document.addEventListener('seasonTMDeleted', (e) => {
+            createTMTable()
+       }, false)
+
+       document.addEventListener('TMValueChanged', (e) => {
+            createTMSeasonResult(e.detail)
+       }, false)
+
+       
+
+        

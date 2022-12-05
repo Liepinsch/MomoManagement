@@ -1,0 +1,148 @@
+extends layout
+
+block content
+    div#chart(style="width:100%")
+
+
+
+    script.
+       var price = !{prices}
+       savePrices(price)
+
+        calculateGameBalance()
+        function calculateGameBalance(){
+
+            
+
+            var prices = JSON.parse(localStorage.getItem('prices'))
+            var balances = new Object()
+
+            if(localStorage.getItem('MD_game')){
+                var array = JSON.parse(localStorage.getItem('MD_game'))
+                var usd = 0.0
+                for (var i = 0; i < array.length; i++) {
+                    var row = array[i]
+                    var mbox = (parseFloat(row.arenaMbox) + parseFloat(row.heroesMbox) + parseFloat(row.chapterMbox) + parseFloat(row.earningsMbox) - parseFloat(row.expenciesMbox)) * parseFloat(prices.mbox)
+                    var mec = (parseFloat(row.arenaMec) + parseFloat(row.heroesMec) + parseFloat(row.chapterMec) + parseFloat(row.peakarena) + parseFloat(row.earningsMec) + parseFloat(row.relic) * 14.0 - parseFloat(row.expenciesMec)) * parseFloat(prices.mec)
+                    usd += Math.round((mbox + mec) * 100) / 100      
+                }
+                balances.md = usd
+            }
+
+            if(localStorage.getItem('TM_game')){
+                var array = JSON.parse(localStorage.getItem('TM_game'))
+                var usd = 0.0
+                for (var i = 0; i < array.length; i++) {
+
+                        var row = array[i]
+                        var mbox = (parseFloat(row.plunderMbox) + parseFloat(row.goldMbox) + parseFloat(row.earningsMbox) - parseFloat(row.expenciesMbox)) * parseFloat(prices.mbox)
+                        var mec = (parseFloat(row.adventure) + parseFloat(row.goldMec) + parseFloat(row.plunderMec) + parseFloat(row.earningsMec) - parseFloat(row.expenciesMec)) * parseFloat(prices.mec)
+                        usd += Math.round((mbox + mec) * 100) / 100
+     
+                }
+                balances.tm = usd
+            }
+
+            if(localStorage.getItem('BB_game')){
+                var array = JSON.parse(localStorage.getItem('BB_game'))
+                var usd = 0.0
+                for (var i = 0; i < array.length; i++) {
+
+                        var row = array[i]
+                        var mbox = (parseFloat(row.battleMbox) + parseFloat(row.dungeonMbox) + parseFloat(row.earningsMbox) - parseFloat(row.expenciesMbox)) * parseFloat(prices.mbox)
+                        var mec = (parseFloat(row.sweep) + parseFloat(row.battleMec) + parseFloat(row.dungeonMec) + parseFloat(row.earningsMec) - parseFloat(row.expenciesMec)) * parseFloat(prices.mec)
+                        usd += Math.round((mbox + mec) * 100) / 100   
+                }
+                balances.bb = usd
+            }
+
+            if(localStorage.getItem('CZ_game')){
+                var array = JSON.parse(localStorage.getItem('CZ_game'))
+                var usd = 0.0
+                for (var i = 0; i < array.length; i++) {
+
+                        var row = array[i]
+                        var mbox = (parseFloat(row.mbap) + parseFloat(row.arenaMbox) + parseFloat(row.royalMbox) + parseFloat(row.dungeonMbox) + parseFloat(row.earningsMbox) - parseFloat(row.expenciesMbox)) * parseFloat(prices.mbox)
+                        var mec = (parseFloat(row.sap) + parseFloat(row.arenaMec) + parseFloat(row.royalMec) + parseFloat(row.dungeonMec) + parseFloat(row.treasure) + parseFloat(row.earningsMec) - parseFloat(row.expenciesMec)) * parseFloat(prices.mec)
+                        usd += Math.round((mbox + mec) * 100) / 100
+     
+                }
+                balances.cz = usd
+            }
+
+            if(localStorage.getItem('CM_game')){
+                var array = JSON.parse(localStorage.getItem('CM_game'))
+                var usd = 0.0
+                for (var i = 0; i < array.length; i++) {
+
+                        var row = array[i]
+                        var mbox = (parseFloat(row.monumentMbox) + parseFloat(row.arenaMbox) + parseFloat(row.prosperityMbox) + parseFloat(row.heroMbox) + parseFloat(row.prestigeMbox) + parseFloat(row.earningsMbox) - parseFloat(row.expenciesMbox)) * parseFloat(prices.mbox)
+                        var mec = (parseFloat(row.monumentMec) + parseFloat(row.arenaMec) + parseFloat(row.prosperityMec) + parseFloat(row.heroMec) + parseFloat(row.prestigeMec) + parseFloat(row.earningsMec) - parseFloat(row.expenciesMec)) * parseFloat(prices.mec)
+                        usd += Math.round((mbox + mec) * 100) / 100      
+                }
+
+                balances.cm = usd
+            }
+
+            var options = {
+                series: [{
+                    name: 'Moland Defence',
+                    data: [Math.round(balances.md ?? 0.0)]
+                }, {
+                    name: 'Clash of Moland',
+                    data: [Math.round(balances.cm ?? 0.0)]
+                }, {
+                    name: 'ChainZ Arena',
+                    data: [Math.round(balances.cz ?? 0.0)]
+                }, {
+                    name: 'Blockbrawler',
+                    data: [Math.round(balances.bb ?? 0.0)]
+                }, {
+                    name: 'Tockenmaster',
+                    data: [Math.round(balances.tm ?? 0.0)]
+                }],
+                chart: {
+                    type: 'bar',
+                    height: 350
+                },
+                plotOptions: {
+                    bar: {
+                        borderRadius: 4,
+                        horizontal: true,
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                xaxis: {
+                    categories: ['Moland Defence', 'Clash of Moland', 'ChainZ Arena', 'Blockbrawler', 'Tockenmaster'],
+                    labels: {
+                        style: {
+                            colors: '#aaa'
+                        }
+                    }
+                },
+                yaxis: {
+                    labels: {
+                        style: {
+                            colors: '#aaa'
+                        }
+                    }
+                },
+                colors: [(balances.md > 0 ? '#62c462' : '#ee5f5b'), (parseInt(balances.cm) > 0 ? '#62c462' : '#ee5f5b'), (balances.cz > 0 ? '#62c462' : '#ee5f5b'), (balances.bb > 0 ? '#62c462' : '#ee5f5b'), (balances.tm > 0 ? '#62c462' : '#ee5f5b')],
+                dataLabels: {
+                    style: {
+                        colors: ['#fff', '#fff', '#fff', '#fff', '#fff']
+                    }
+                },
+                legend: {
+                    labels: {
+                        colors: '#aaa'
+                    }
+                }
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+
+        }

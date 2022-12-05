@@ -1,0 +1,47 @@
+extends layout
+
+
+block content
+    div#gamesBB(style='width:100%')
+        table#BB_game(style='width:100%')
+            tr
+                td(style='width:6%')
+                    img(src='/images/blockbrawler.png' style='width:4em')
+                th(style='width:11%')
+                    p Momo Sweep
+                th(style='width:11%')
+                    p Battle
+                th(style='width:11%')
+                    p Dungeon
+                th(style='width:11%')
+                    p Earnings
+                th(style='width:11%')
+                    p Expencies
+                th(style='width:11%')
+                    p Total
+                td(style='width:6%')
+                    i.fa-regular.fa-square-plus.fa-2xl(onclick='addBBSeason()')
+
+    script(type='text/javascript', src='javascripts/views/blockbrawler.js')
+    script.
+        var price = !{prices}
+        savePrices(price)
+
+        createBBTable()
+       
+        document.addEventListener('newBBSeasonAdded', (e) => {
+                createBBTable()
+        }, false)
+
+        document.addEventListener('seasonBBDeleted', (e) => {
+                createBBTable()
+        }, false)
+
+        document.addEventListener('BBValueChanged', (e) => {
+                console.log(e.detail)
+                createBBSeasonResult(e.detail)
+        }, false)
+
+       
+
+        

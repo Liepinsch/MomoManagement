@@ -1,0 +1,136 @@
+extends layout
+
+
+
+block content
+  script.
+    var price = !{prices}
+    savePrices(price)
+
+    
+
+  div#content
+    div#summary(style='width:75%;float:left')
+        include summary.pug
+    div#productivity(style='width:20%;float:right')
+        include productivityinputs.pug
+    div.text-center#momoList(style='float:left;width:100%')
+        include momolist.pug
+    div.text-right#div_buttons(style='width:100%')
+        i.fa-regular.fa-square-plus.fa-2xl(style='width:5em;float:right;height:2em' onclick='addMomoToLocalStorage()')
+
+  script(type='text/javascript', src='javascripts/views/momos.js')  
+  script.
+    
+
+    
+    // Events
+    document.addEventListener('momoChanged', (e) => {
+        createMomoDiv(e.detail)
+        createRarityDiv(e.detail)
+        createTypeDiv(e.detail)
+        createIHPDiv(e.detail)
+        createProductivityDiv(e.detail)
+        createProductivityTable(e.detail)
+        calculateDailyRoi(e.detail)
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('levelChanged', (e) => {
+        createIHPDiv(e.detail)
+        createProductivityDiv(e.detail)
+        createProductivityTable(e.detail)
+        calculateDailyRoi(e.detail)
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('ihpChanged', (e) => {
+        createIHPDiv(e.detail)
+        createProductivityDiv(e.detail)
+        createProductivityTable(e.detail)
+        calculateDailyRoi(e.detail)
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('gem1Changed', (e) => {
+        createGem1Div(e.detail)
+        createProductivityDiv(e.detail)
+        createProductivityTable(e.detail)
+        calculateDailyRoi(e.detail)
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('gem2Changed', (e) => {
+        createGem2Div(e.detail)
+        createProductivityDiv(e.detail)
+        createProductivityTable(e.detail)
+        calculateDailyRoi(e.detail)
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('gem3Changed', (e) => {
+        createGem3Div(e.detail)
+        createProductivityDiv(e.detail)
+        createProductivityTable(e.detail)
+        calculateDailyRoi(e.detail)
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('gem4Changed', (e) => {
+        createGem4Div(e.detail)
+        createProductivityDiv(e.detail)
+        createProductivityTable(e.detail)
+        calculateDailyRoi(e.detail)
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('locationChanged', (e) => {
+        createProductivityDiv(e.detail)
+        createProductivityTable(e.detail)
+        calculateDailyRoi(e.detail)
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('familyChanged', (e) => {
+        createProductivityDiv(e.detail)
+        createProductivityTable(e.detail)
+        calculateDailyRoi(e.detail)
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('productivityChanged', (e) => {
+        var momoList = JSON.parse(localStorage.getItem('momoList'))
+        for (var i = 0; i < momoList.length; i++) {
+            createProductivityTable(momoList[i].id)
+            calculateDailyRoi(momoList[i].id)
+        }
+        createSummaryMomoTable()
+    }, false)
+
+    document.addEventListener('costsChanged', (e) => {
+        createCostsTable(e.detail)
+
+    }, false)
+
+    document.addEventListener('earningsChanged', (e) => {
+        
+        createSummaryMomoTable()
+
+    }, false)
+
+    document.getElementById('content').onclick = function(e){
+        var target = e.target || e.srcElement
+        var clickOnPopup = true
+        if((target.tagName == 'INPUT' && target.parentNode.className == 'popup') || (target.tagName == 'DIV' && target.className == 'popup')){
+            clickOnPopup = false
+        }
+        if(clickOnPopup && document.getElementsByClassName('popup')) { 
+            Array.from(document.getElementsByClassName('popup')).forEach((element) => { element.remove() }) }
+    }
+
+
+
+
+    
+
+    

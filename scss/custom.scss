@@ -1,0 +1,21 @@
+
+
+@import "variables.scss";
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "bootswatch.scss";
+
+.form-control {
+    background-color: #3a3f44;
+    color: #aaa;
+    border: 1px solid rgba(0,0,0,.6);
+    height: calc(1em + 0.5rem);
+    font-size: 1rem;
+    line-height: 0.5;
+    padding: 0.6rem 0.5rem;
+    border-radius: 0.15rem
+}
+
+.form-control:focus {
+    background-color: #3a3f44;
+    color: #aaa;
+}

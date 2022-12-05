@@ -1,0 +1,30 @@
+
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    div.container-fluid
+        a.navbar-brand(href='/') MoMoManager
+        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarsContent', aria-controls='navbarsContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+         
+        #navbarsContent.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+                li.nav-item
+                    a.nav-link(href='momos') Momo Overview 
+                    span.sr-only (current)
+                li.nav-item.dropdown
+                    a#dropdownGame.nav-link.dropdown-toggle(href='#', data-bs-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Games
+                    .dropdown-menu(aria-labelledby='dropdownGame')
+                        a.dropdown-item(href='game') Overview
+                        a.dropdown-item(href='defence') Moland Defence
+                        a.dropdown-item(href='chainz') ChainZ Arena
+                        a.dropdown-item(href='clash') Clash of Moland
+                        a.dropdown-item(href='blockbrawler') Block Brawler
+                        a.dropdown-item(href='tockenmaster') Tocken Master 
+                li.nav-item
+                    a.nav-link.disabled(href='trends') Charts
+        i.bg-dark.fa-solid.fa-download.fa-xl(style="margin-left:1em" onclick="download()" title="download config")
+        i.bg-dark.fa-solid.fa-upload.fa-xl(style="margin-left:1em" onclick="upload()" title="upload config")
+        div.bg-dark(style="margin:1em")
+            img(src="images/mbox.png" style='height:1.5em; display:inline-block')
+            p(style='display:inline-block;margin-right:1em;margin-bottom:0') !{Math.round(JSON.parse(prices != undefined ? prices : JSON.stringify({"mbox" : {"price" : 0.0 }})).mbox.price * 1000)/1000} $
+            img(src="images/mec.png" style='height:1.5em; display:inline-block') 
+            p(style='display:inline-block;margin-bottom:0') !{Math.round(JSON.parse(prices != undefined ? prices : JSON.stringify({"mec" : {"price" : 0.0 }})).mec.price * 1000) / 1000} $          

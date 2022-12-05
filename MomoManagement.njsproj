@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>MomoManagement</Name>
+    <RootNamespace>MomoManagement</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>975a6ad1-a3e0-44e1-bd9c-64704bce788a</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="data\prices.json" />
+    <Content Include="public\images\blockbrawler.png" />
+    <Content Include="public\images\chaincarena.png" />
+    <Content Include="public\images\clashofmoland.png" />
+    <Content Include="public\images\family.png" />
+    <Content Include="public\images\molanddefense.png" />
+    <Content Include="public\images\momofarmer.png" />
+    <Content Include="public\images\momoverse.png" />
+    <Content Include="public\images\momo\breezer_rare_fish.png" />
+    <Content Include="public\images\momo\chickadee_rare_bird.png" />
+    <Content Include="public\images\momo\chillingtonlapenguino_rare_bird.png" />
+    <Content Include="public\images\momo\conradalastoraligator_rare_beast.png" />
+    <Content Include="public\images\momo\darkravendarkbird_rare_bird.png" />
+    <Content Include="public\images\momo\demondave_rare_monster.png" />
+    <Content Include="public\images\momo\geezopo_rare_monster.png" />
+    <Content Include="public\images\momo\jolindajellifisher_rare_fish.png" />
+    <Content Include="public\images\momo\kingleonardo_rare_beast.png" />
+    <Content Include="public\images\momo\leilanihawaiianbluehula_rare_bird.png" />
+    <Content Include="public\images\momo\loonyloolinda_rare_monster.png" />
+    <Content Include="public\images\mbox.png" />
+    <Content Include="public\images\mec.png" />
+    <Content Include="public\images\momo\madametootington_rare_fish.png" />
+    <Content Include="public\images\momo\momoverse.png" />
+    <Content Include="public\images\momo\monsieurmeowsley_rare_beast.png" />
+    <Content Include="public\images\momo\mrsfernaciafeathers_rare_bird.png" />
+    <Content Include="public\images\momo\pinkthespikes_rare_monster.png" />
+    <Content Include="public\images\momo\punkpebblo_rare_fish.png" />
+    <Content Include="public\images\momo\punkpup_rare_beast.png" />
+    <Content Include="public\images\momo\rancherredfin_rare_fish.png" />
+    <Content Include="public\images\momo\sirfranklin_rare_monster.png" />
+    <Content Include="public\images\momo\spikester_rare_fish.png" />
+    <Content Include="public\images\momo\stubslysam_rare_monster.png" />
+    <Content Include="public\images\momo\tweetser_rare_bird.png" />
+    <Content Include="public\images\momo\violetradarfeastherstone_rare_bird.png" />
+    <Content Include="public\images\tokenmaster.png" />
+    <Content Include="public\javascripts\apexcharts\apexcharts.amd.js" />
+    <Content Include="public\javascripts\apexcharts\apexcharts.amd.js.LICENSE.txt" />
+    <Content Include="public\javascripts\apexcharts\apexcharts.common.js" />
+    <Content Include="public\javascripts\apexcharts\apexcharts.css" />
+    <Content Include="public\javascripts\apexcharts\apexcharts.esm.js" />
+    <Content Include="public\javascripts\apexcharts\apexcharts.js" />
+    <Content Include="public\javascripts\apexcharts\apexcharts.min.js" />
+    <Content Include="public\javascripts\apexcharts\locales\ar.json" />
+    <Content Include="public\javascripts\apexcharts\locales\ca.json" />
+    <Content Include="public\javascripts\apexcharts\locales\cs.json" />
+    <Content Include="public\javascripts\apexcharts\locales\de.json" />
+    <Content Include="public\javascripts\apexcharts\locales\el.json" />
+    <Content Include="public\javascripts\apexcharts\locales\en.json" />
+    <Content Include="public\javascripts\apexcharts\locales\es.json" />
+    <Content Include="public\javascripts\apexcharts\locales\et.json" />
+    <Content Include="public\javascripts\apexcharts\locales\fa.json" />
+    <Content Include="public\javascripts\apexcharts\locales\fi.json" />
+    <Content Include="public\javascripts\apexcharts\locales\fr.json" />
+    <Content Include="public\javascripts\apexcharts\locales\he.json" />
+    <Content Include="public\javascripts\apexcharts\locales\hi.json" />
+    <Content Include="public\javascripts\apexcharts\locales\hr.json" />
+    <Content Include="public\javascripts\apexcharts\locales\hu.json" />
+    <Content Include="public\javascripts\apexcharts\locales\hy.json" />
+    <Content Include="public\javascripts\apexcharts\locales\id.json" />
+    <Content Include="public\javascripts\apexcharts\locales\it.json" />
+    <Content Include="public\javascripts\apexcharts\locales\ja.json" />
+    <Content Include="public\javascripts\apexcharts\locales\ka.json" />
+    <Content Include="public\javascripts\apexcharts\locales\ko.json" />
+    <Content Include="public\javascripts\apexcharts\locales\lt.json" />
+    <Content Include="public\javascripts\apexcharts\locales\lv.json" />
+    <Content Include="public\javascripts\apexcharts\locales\nb.json" />
+    <Content Include="public\javascripts\apexcharts\locales\nl.json" />
+    <Content Include="public\javascripts\apexcharts\locales\pl.json" />
+    <Content Include="public\javascripts\apexcharts\locales\pt-br.json" />
+    <Content Include="public\javascripts\apexcharts\locales\pt.json" />
+    <Content Include="public\javascripts\apexcharts\locales\rs.json" />
+    <Content Include="public\javascripts\apexcharts\locales\ru.json" />
+    <Content Include="public\javascripts\apexcharts\locales\se.json" />
+    <Content Include="public\javascripts\apexcharts\locales\sk.json" />
+    <Content Include="public\javascripts\apexcharts\locales\sl.json" />
+    <Content Include="public\javascripts\apexcharts\locales\sq.json" />
+    <Content Include="public\javascripts\apexcharts\locales\th.json" />
+    <Content Include="public\javascripts\apexcharts\locales\tr.json" />
+    <Content Include="public\javascripts\apexcharts\locales\ua.json" />
+    <Content Include="public\javascripts\apexcharts\locales\zh-cn.json" />
+    <Content Include="public\javascripts\apexcharts\locales\zh-tw.json" />
+    <Content Include="public\javascripts\shelpers.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\javascripts\views\blockbrawler.js" />
+    <Content Include="public\javascripts\views\chainz.js" />
+    <Content Include="public\javascripts\views\index.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\javascripts\views\momos.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\javascripts\views\tockenmaster.js" />
+    <Content Include="public\javascripts\views\clash.js" />
+    <Content Include="public\javascripts\views\defence.js" />
+    <Content Include="public\javascripts\views\game.js" />
+    <Content Include="public\javascripts\views\summary.js" />
+    <Content Include="public\javascripts\views\productivityinputs.js" />
+    <Content Include="public\javascripts\views\momolist.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\jquery\jquery.min.js" />
+    <Content Include="public\stylesheets\custom.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\game.js" />
+    <Content Include="routes\clash.js" />
+    <Content Include="routes\defence.js" />
+    <Content Include="routes\chainz.js" />
+    <Content Include="routes\blockbrawler.js" />
+    <Content Include="routes\momos.js" />
+    <Content Include="routes\tockenmaster.js" />
+    <Content Include="routes\trends.js" />
+    <Content Include="scss\bootswatch.scss">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="scss\custom.scss">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="scss\variables.scss">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\footer.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\game.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\clash.pug" />
+    <Content Include="views\defence.pug" />
+    <Content Include="views\momos.pug" />
+    <Content Include="views\tockenmaster.pug" />
+    <Content Include="views\blockbrawler.pug" />
+    <Content Include="views\chainz.pug" />
+    <Content Include="views\menu.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\trends.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="web.config">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\images\momo\acropolous_rare_beast.png" />
+    <Content Include="public\images\momo\admiralsealion_rare_fish.png" />
+    <Content Include="public\images\momo\anteater_rare_beast.png" />
+    <Content Include="public\images\momo\astroace_epic_epic.png" />
+    <Content Include="public\images\momo\auntpopple_rare_fish.png" />
+    <Content Include="public\images\momo\babyshark_rare_bird.png" />
+    <Content Include="public\images\momo\banditbob_epic_epic.png" />
+    <Content Include="public\images\momo\barniclebeausea_rare_fish.png" />
+    <Content Include="public\images\momo\beaklord_rare_bird.png" />
+    <Content Include="public\images\beast.png" />
+    <Content Include="public\images\momo\beekeeperbobby_epic_epic.png" />
+    <Content Include="public\images\bird.png" />
+    <Content Include="public\images\momo\blazeboy_epic_epic.png" />
+    <Content Include="public\images\gems\bluegem_140.png" />
+    <Content Include="public\images\gems\bluegem_1600.png" />
+    <Content Include="public\images\gems\bluegem_20.png" />
+    <Content Include="public\images\gems\bluegem_200.png" />
+    <Content Include="public\images\gems\bluegem_40.png" />
+    <Content Include="public\images\gems\bluegem_400.png" />
+    <Content Include="public\images\gems\bluegem_4000.png" />
+    <Content Include="public\images\gems\bluegem_80.png" />
+    <Content Include="public\images\gems\bluegem_800.png" />
+    <Content Include="public\images\gems\bluegem_empty.png" />
+    <Content Include="public\images\momo\bozotheclown_epic_epic.png" />
+    <Content Include="public\images\momo\brawlancelot_rare_bird.png" />
+    <Content Include="public\images\momo\builderbennet_epic_epic.png" />
+    <Content Include="public\images\momo\buttondeous_rare_monster.png" />
+    <Content Include="public\images\momo\cactaziller_rare_monster.png" />
+    <Content Include="public\images\momo\captainamerica_epic_epic.png" />
+    <Content Include="public\images\momo\captaincarl_epic_epic.png" />
+    <Content Include="public\images\momo\captainoinksly_rare_beast.png" />
+    <Content Include="public\images\momo\cedomir_epic_epic.png" />
+    <Content Include="public\images\momo\chopper_rare_monster.png" />
+    <Content Include="public\images\momo\chuckwoodbird_rare_bird.png" />
+    <Content Include="public\images\momo\circulator_epic_epic.png" />
+    <Content Include="public\images\momo\claudette_epic_epic.png" />
+    <Content Include="public\images\momo\clericas_epic_epic.png" />
+    <Content Include="public\images\momo\coachkenny_epic_epic.png" />
+    <Content Include="public\images\momo\coiningobwalleto_rare_monster.png" />
+    <Content Include="public\images\momo\crayzor_rare_monster.png" />
+    <Content Include="public\images\momo\crimsonbar_epic_epic.png" />
+    <Content Include="public\images\momo\cupid_epic_epic.png" />
+    <Content Include="public\images\momo\cyclercarl_epic_epic.png" />
+    <Content Include="public\images\momo\daisobells_rare_beast.png" />
+    <Content Include="public\images\momo\djmomo_epic_epic.png" />
+    <Content Include="public\images\momo\dragatore_rare_monster.png" />
+    <Content Include="public\images\momo\droolarine_rare_monster.png" />
+    <Content Include="public\images\epic.png" />
+    <Content Include="public\images\momo\eyepatchfred_epic_epic.png" />
+    <Content Include="public\images\momo\fangs_rare_monster.png" />
+    <Content Include="public\favicon.ico" />
+    <Content Include="public\images\momo\felixfielder_rare_beast.png" />
+    <Content Include="public\images\momo\finmidfielder_rare_fish.png" />
+    <Content Include="public\images\momo\firemanphill_epic_epic.png" />
+    <Content Include="public\images\fish.png" />
+    <Content Include="public\images\momo\flame_rare_bird.png" />
+    <Content Include="public\images\momo\flaminglatineflamingos_rare_bird.png" />
+    <Content Include="public\images\momo\flash_epic_epic.png" />
+    <Content Include="public\images\momo\flopper_rare_fish.png" />
+    <Content Include="public\images\momo\fluffgoggle_epic_epic.png" />
+    <Content Include="public\images\momo\frankerstein_rare_monster.png" />
+    <Content Include="public\images\momo\freakyfreddy_epic_epic.png" />
+    <Content Include="public\images\momo\frightenator_rare_monster.png" />
+    <Content Include="public\images\momo\fro_epic_epic.png" />
+    <Content Include="public\images\momo\geeraffmunchallot_rare_beast.png" />
+    <Content Include="public\images\momo\gingerteetweet_rare_bird.png" />
+    <Content Include="public\images\momo\gliderringie_rare_beast.png" />
+    <Content Include="public\images\momo\goldenglow_rare_monster.png" />
+    <Content Include="public\images\momo\goldman_epic_epic.png" />
+    <Content Include="public\images\momo\graduategraham_epic_epic.png" />
+    <Content Include="public\images\gems\greengem_140.png" />
+    <Content Include="public\images\gems\greengem_1600.png" />
+    <Content Include="public\images\gems\greengem_20.png" />
+    <Content Include="public\images\gems\greengem_200.png" />
+    <Content Include="public\images\gems\greengem_40.png" />
+    <Content Include="public\images\gems\greengem_400.png" />
+    <Content Include="public\images\gems\greengem_4000.png" />
+    <Content Include="public\images\gems\greengem_80.png" />
+    <Content Include="public\images\gems\greengem_800.png" />
+    <Content Include="public\images\gems\greengem_empty.png" />
+    <Content Include="public\images\momo\greenmask_epic_epic.png" />
+    <Content Include="public\images\momo\inspectorboris_epic_epic.png" />
+    <Content Include="public\images\momo\kingplatasaur_rare_monster.png" />
+    <Content Include="public\images\momo\ladyojfishington_rare_fish.png" />
+    <Content Include="public\images\momo\ladyvictoria_epic_epic.png" />
+    <Content Include="public\images\momo\lasereyes_epic_epic.png" />
+    <Content Include="public\images\momo\lavendria_epic_epic.png" />
+    <Content Include="public\images\momo\leefalicious_rare_monster.png" />
+    <Content Include="public\images\momo\luckystreak_epic_epic.png" />
+    <Content Include="public\images\momo\madambillton_rare_bird.png" />
+    <Content Include="public\images\momo\madamcarmiladubois_epic_epic.png" />
+    <Content Include="public\images\momo\madbanana_rare_beast.png" />
+    <Content Include="public\images\momo\mademoisellebluebreast_rare_bird.png" />
+    <Content Include="public\images\momo\mamapatchfish_rare_fish.png" />
+    <Content Include="public\images\momo\maplebeak_rare_beast.png" />
+    <Content Include="public\images\momo\maskedmay_epic_epic.png" />
+    <Content Include="public\images\momo\maskedraven_epic_epic.png" />
+    <Content Include="public\images\momo\maskedsow_epic_epic.png" />
+    <Content Include="public\images\momo\maskeduscles_epic_epic.png" />
+    <Content Include="public\images\momo\masterso_epic_epic.png" />
+    <Content Include="public\images\momo\matadormiguel_epic_epic.png" />
+    <Content Include="public\images\momo\mboxwolfer_rare_beast.png" />
+    <Content Include="public\images\momo\meansprout_rare_monster.png" />
+    <Content Include="public\images\momo\metalicomofisher_rare_fish.png" />
+    <Content Include="public\images\momo\midfielderaxl_epic_epic.png" />
+    <Content Include="public\images\momo_empty.png" />
+    <Content Include="public\images\monster.png" />
+    <Content Include="public\images\momo\mrpatch_epic_epic.png" />
+    <Content Include="public\images\momo\mrsfinnalacia_rare_fish.png" />
+    <Content Include="public\images\momo\mrspeckington_rare_bird.png" />
+    <Content Include="public\images\momo\mrspoppinglyfisher_rare_fish.png" />
+    <Content Include="public\images\momo\mrsscarlet_rare_bird.png" />
+    <Content Include="public\images\momo\mrssnapperlicious_rare_fish.png" />
+    <Content Include="public\images\momo\msmauve_rare_bird.png" />
+    <Content Include="public\images\momo\mudttilius_rare_beast.png" />
+    <Content Include="public\images\momo\nightguard_epic_epic.png" />
+    <Content Include="public\images\momo\nursehart_epic_epic.png" />
+    <Content Include="public\images\momo\nurseyninettewhitebird_rare_bird.png" />
+    <Content Include="public\images\momo\nuttersquirrel_rare_beast.png" />
+    <Content Include="public\images\momo\odin_epic_epic.png" />
+    <Content Include="public\images\momo\ohroar_rare_monster.png" />
+    <Content Include="public\images\momo\oseidon_epic_epic.png" />
+    <Content Include="public\images\momo\paschquale_epic_epic.png" />
+    <Content Include="public\images\momo\patriotpatrick_epic_epic.png" />
+    <Content Include="public\images\momo\peckers_rare_bird.png" />
+    <Content Include="public\images\momo\peteplatypus_rare_beast.png" />
+    <Content Include="public\images\momo\picasso_epic_epic.png" />
+    <Content Include="public\images\momo\pilotparker_epic_epic.png" />
+    <Content Include="public\images\momo\pinkiefisher_rare_fish.png" />
+    <Content Include="public\images\momo\pokentine_rare_monster.png" />
+    <Content Include="public\images\momo\poppar_rare_monster.png" />
+    <Content Include="public\images\momo\potasaur_rare_monster.png" />
+    <Content Include="public\images\momo\professorkim_epic_epic.png" />
+    <Content Include="public\images\momo\puckatore_rare_monster.png" />
+    <Content Include="public\images\momo\quackerjack_rare_bird.png" />
+    <Content Include="public\images\momo\queentangelaofpeckington_rare_bird.png" />
+    <Content Include="public\images\momo\quennflame_epic_epic.png" />
+    <Content Include="public\images\momo\radical_rare_bird.png" />
+    <Content Include="public\images\momo\rampastamp_rare_monster.png" />
+    <Content Include="public\images\momo\rangerbrownfin_rare_fish.png" />
+    <Content Include="public\images\momo\raven_epic_epic.png" />
+    <Content Include="public\images\gems\redgem_140.png" />
+    <Content Include="public\images\gems\redgem_1600.png" />
+    <Content Include="public\images\gems\redgem_20.png" />
+    <Content Include="public\images\gems\redgem_200.png" />
+    <Content Include="public\images\gems\redgem_40.png" />
+    <Content Include="public\images\gems\redgem_400.png" />
+    <Content Include="public\images\gems\redgem_4000.png" />
+    <Content Include="public\images\gems\redgem_80.png" />
+    <Content Include="public\images\gems\redgem_800.png" />
+    <Content Include="public\images\gems\redgem_empty.png" />
+    <Content Include="public\images\momo\redgreencapfinner_rare_fish.png" />
+    <Content Include="public\images\momo\redraarer_epic_epic.png" />
+    <Content Include="public\images\momo\repizalous_rare_beast.png" />
+    <Content Include="public\images\momo\roaralline_rare_monster.png" />
+    <Content Include="public\images\momo\roarz_rare_monster.png" />
+    <Content Include="public\images\momo\robotico_epic_epic.png" />
+    <Content Include="public\images\momo\rockie_epic_epic.png" />
+    <Content Include="public\images\momo\rockorider_rare_beast.png" />
+    <Content Include="public\images\momo\roosterdoodledoo_rare_bird.png" />
+    <Content Include="public\images\momo\roughhouseronnie_epic_epic.png" />
+    <Content Include="public\images\momo\rumbleronny_epic_epic.png" />
+    <Content Include="public\images\momo\safariscott_epic_epic.png" />
+    <Content Include="public\images\momo\sargsimon_epic_epic.png" />
+    <Content Include="public\images\momo\screechare_rare_bird.png" />
+    <Content Include="public\images\momo\seniorhootsalat_rare_bird.png" />
+    <Content Include="public\images\momo\seniorspotseaford_rare_fish.png" />
+    <Content Include="public\images\momo\senoryellowgob_rare_bird.png" />
+    <Content Include="public\images\momo\sheriffred_rare_fish.png" />
+    <Content Include="public\images\momo\sircyclopolous_rare_monster.png" />
+    <Content Include="public\images\momo\sirsnowingtonflyer_rare_bird.png" />
+    <Content Include="public\images\momo\sirstingabold_rare_fish.png" />
+    <Content Include="public\images\momo\sirwillington_rare_fish.png" />
+    <Content Include="public\images\momo\sistersophia_epic_epic.png" />
+    <Content Include="public\images\momo\skullhorns_rare_monster.png" />
+    <Content Include="public\images\momo\skyscale_rare_monster.png" />
+    <Content Include="public\images\momo\slammoo_epic_epic.png" />
+    <Content Include="public\images\momo\speedysam_epic_epic.png" />
+    <Content Include="public\images\momo\sproutinator_rare_monster.png" />
+    <Content Include="public\images\momo\steivepeckles_epic_epic.png" />
+    <Content Include="public\images\momo\stingo_rare_fish.png" />
+    <Content Include="public\images\momo\stripesssmiles_rare_bird.png" />
+    <Content Include="public\images\momo\sultansolomon_epic_epic.png" />
+    <Content Include="public\images\momo\sunbeamer_rare_bird.png" />
+    <Content Include="public\images\momo\sunrange_epic_epic.png" />
+    <Content Include="public\images\momo\superrabbit_rare_beast.png" />
+    <Content Include="public\images\momo\surosomoto_epic_epic.png" />
+    <Content Include="public\images\momo\tajijtandoori_epic_epic.png" />
+    <Content Include="public\images\momo\tankman_epic_epic.png" />
+    <Content Include="public\images\momo\texasranger_epic_epic.png" />
+    <Content Include="public\images\momo\tingrowler_rare_beast.png" />
+    <Content Include="public\images\momo\topgun_epic_epic.png" />
+    <Content Include="public\images\momo\trap_rare_beast.png" />
+    <Content Include="public\images\momo\turquoisia_rare_fish.png" />
+    <Content Include="public\images\momo\venomus_epic_epic.png" />
+    <Content Include="public\images\momo\vicktoriosthebluebird_rare_bird.png" />
+    <Content Include="public\images\momo\vladledrac_epic_epic.png" />
+    <Content Include="public\images\momo\wang_epic_epic.png" />
+    <Content Include="public\images\momo\whale_rare_fish.png" />
+    <Content Include="public\images\momo\witchery_epic_epic.png" />
+    <Content Include="public\images\momo\wrapped_epic_epic.png" />
+    <Content Include="public\images\momo\yahmanpurplebeakersnr_rare_bird.png" />
+    <Content Include="public\images\momo\yayatheracoon_rare_beast.png" />
+    <Content Include="public\images\gems\yellowgem_140.png" />
+    <Content Include="public\images\gems\yellowgem_1600.png" />
+    <Content Include="public\images\gems\yellowgem_20.png" />
+    <Content Include="public\images\gems\yellowgem_200.png" />
+    <Content Include="public\images\gems\yellowgem_40.png" />
+    <Content Include="public\images\gems\yellowgem_400.png" />
+    <Content Include="public\images\gems\yellowgem_4000.png" />
+    <Content Include="public\images\gems\yellowgem_80.png" />
+    <Content Include="public\images\gems\yellowgem_800.png" />
+    <Content Include="public\images\gems\yellowgem_empty.png" />
+    <Content Include="public\javascripts\chelpers.js" />
+    <Content Include="routes\index.js" />
+    <Content Include="routes\users.js" />
+    <Content Include="public\stylesheets\main.css" />
+    <Content Include="README.md" />
+    <Content Include="views\index.pug" />
+    <Content Include="views\productivityinputs.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\layout.pug" />
+    <Content Include="views\error.pug" />
+    <Content Include="views\momolist.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\summary.pug">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="public\javascripts\views\" />
+    <Folder Include="scss\" />
+    <Folder Include="public\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\images\momo\" />
+    <Folder Include="public\images\gems\" />
+    <Folder Include="public\javascripts\" />
+    <Folder Include="public\javascripts\apexcharts\" />
+    <Folder Include="public\javascripts\apexcharts\locales\" />
+    <Folder Include="public\jquery\" />
+    <Folder Include="public\stylesheets\" />
+    <Folder Include="routes\" />
+    <Folder Include="views\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

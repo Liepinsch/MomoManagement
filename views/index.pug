@@ -1,0 +1,28 @@
+extends layout
+
+
+
+block content
+    div.container-fluid
+        div.raw(style="width:100%")
+            h1 MoMoManager 
+            h2 Management application to calculate possible return of investment, to store spendings and game results for Mobox metaverse
+            p All data are saved in your browser's local storage. Use download and upload buttons to backup your configuration and to restore it
+        div.raw(style="display:flex")
+            div.col.col-md-6#priceMec           
+            div.col.col-md-6#priceMbox
+        div.raw(style="display:flex")
+            div.col#feather(style="width:20%")      
+            div.col#leather(style="width:20%")
+            div.col#pearl(style="width:20%")           
+            div.col#ore(style="width:20%")
+            div.col#gold(style="width:20%")           
+        script(type='text/javascript', src='javascripts/views/index.js')
+        script.
+            var price = !{prices}
+            savePrices(price)
+
+            getPriceDataFromServer()
+            getProductivityDataFromLocalStorage()
+
+        
